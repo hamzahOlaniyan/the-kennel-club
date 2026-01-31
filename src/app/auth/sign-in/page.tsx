@@ -1,8 +1,7 @@
 "use client";
 
-import FormContainer from "@/src/app/components/FormContainer";
-import Button from "@/src/app/components/ui/Button";
-import { signIn } from "@/src/lib/auth";
+import FormContainer from "@/src/components/FormContainer";
+import Button from "@/src/components/ui/Button";
 import { FormEvent, useState } from "react";
 import { redirect } from "next/navigation";
 
@@ -13,33 +12,6 @@ export default function SignIn() {
    const [error, setError] = useState("");
    const [message, setMessage] = useState("");
 
-   const handleSignIn = async (e: FormEvent) => {
-      e.preventDefault();
-
-      try {
-         setLoading(true);
-         await signIn("credentials", { email, password }).then((res) => {
-            if (!res) {
-               setError("Failed to create account");
-            }
-            setTimeout(() => {
-               redirect("/auth/sign-in");
-            }, 3000);
-
-            setLoading(false);
-            setError("");
-            setEmail("");
-            setPassword("");
-         });
-      } catch (err) {
-         if (err instanceof Error) {
-            setError(err.message);
-         }
-      } finally {
-         setLoading(false);
-      }
-   };
-
    return (
       <FormContainer
          header="Welcome back"
@@ -48,7 +20,7 @@ export default function SignIn() {
          link="register"
          linkLabel="register"
       >
-         <form onSubmit={handleSignIn} className="space-y-3">
+         <form className="space-y-3">
             <div>
                <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">
                   Email address

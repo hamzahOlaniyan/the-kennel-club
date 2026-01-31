@@ -1,8 +1,8 @@
 "use client";
 
 import { signUp } from "@/src/actions/auth-actions";
-import FormContainer from "@/src/app/components/FormContainer";
-import Button from "@/src/app/components/ui/Button";
+import FormContainer from "@/src/components/FormContainer";
+import Button from "@/src/components/ui/Button";
 import { FormEvent, useState } from "react";
 import { redirect } from "next/navigation";
 

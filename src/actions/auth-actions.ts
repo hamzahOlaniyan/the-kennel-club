@@ -1,8 +1,5 @@
 "use server";
 
-import { redirect } from "next/navigation";
-import { headers } from "next/headers";
-import { auth } from "@/src/lib/auth";
 import prisma from "@/src/lib/prisma";
 import { hashPassword } from "@/src/helpers/hashPassword";
 

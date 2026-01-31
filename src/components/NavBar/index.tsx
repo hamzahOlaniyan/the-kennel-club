@@ -8,7 +8,7 @@ import MediaQuery from "../ui/MediaQuery";
 import SideBar from "../SideMenu";
 import { useState } from "react";
 
-export default function Navigation({ session }: { session: any }) {
+export default function Navigation() {
    const [showMenu, setShowMenu] = useState(false);
    const pathname = usePathname();
 
@@ -18,12 +18,8 @@ export default function Navigation({ session }: { session: any }) {
       return pathname === path;
    };
 
-   // const handleSignOut = async () => {
-   //    await signOut().then((res) => console.log(res));
-   // };
-
    return (
-      <header className="bg-white backdrop-blur-sm border-b border-gray-200 sticky top-0 z-50">
+      <header className="bg-white backdrop-blur-sm fixed top-0 z-50 w-full">
          <div className="h-1 bg-red-700"></div>
          <div className="bg-sky-700 py-1">
             <MediaQuery>
@@ -43,10 +39,10 @@ export default function Navigation({ session }: { session: any }) {
             </MediaQuery>
          </div>
          <MediaQuery>
-            <div className="flex justify-between h-20">
+            <div className="flex justify-between items-center h-18">
                <Logo />
-               <div className="justify-between items-center gap-6">
-                  <nav className="hidden lg:flex items-center h-full">
+               <div className="flex justify-between items-center h-full gap-6">
+                  <nav className="hidden lg:flex items-center h-full ">
                      {naviagtion.map((n) => (
                         <Link
                            key={n.id}
@@ -57,16 +53,16 @@ export default function Navigation({ session }: { session: any }) {
                         </Link>
                      ))}
                   </nav>
+                  <button onClick={() => setShowMenu(!showMenu)} className="lg:hidden">
+                     {showMenu ? "close" : "menu"}{" "}
+                  </button>
+                  <Link
+                     href={"/registration"}
+                     className="hidden lg:flex bg-emerald-700 text-white capitalize font-bold p-2 px-3 rounded-md hover:bg-emerald-600 active:scale-x-95"
+                  >
+                     registration
+                  </Link>
                </div>
-               <button onClick={() => setShowMenu(!showMenu)} className=" lg:hidden">
-                  {showMenu ? "close" : "menu"}{" "}
-               </button>
-               <Link
-                  href={"/registration"}
-                  className="hidden lg:flex bg-emerald-700 text-white capitalize font-bold p-2 px-3 rounded-md hover:bg-emerald-600 active:scale-x-95"
-               >
-                  registration
-               </Link>
             </div>
          </MediaQuery>
          <SideBar visible={showMenu} />
