@@ -7,6 +7,7 @@ import Logo from "../ui/logo";
 import MediaQuery from "../ui/MediaQuery";
 import SideBar from "../SideMenu";
 import { useState } from "react";
+import { FaUserLarge } from "react-icons/fa6";
 
 export default function Navigation() {
    const [showMenu, setShowMenu] = useState(false);
@@ -19,59 +20,52 @@ export default function Navigation() {
    };
 
    return (
-      <header className="bg-white backdrop-blur-sm fixed top-0 z-50 w-full">
-         <div className="h-1 bg-red-700"></div>
-         <div className="bg-sky-700 py-1">
+      <header className="bg-white backdrop-blur-sm w-full z-50">
+         <div className="bg-red-600 h-1"></div>
+         <div className=" lg:flex bg-theme_green/15 py-1.5">
             <MediaQuery>
-               <div className="flex justify-end items-center">
-                  <nav className="gap-6 flex">
+               <nav className="flex justify-end items-center">
+                  <div className="flex items-center">
                      {topNaviagtion.map((n) => (
-                        <Link
-                           key={n.id}
-                           href={`${n.route}`}
-                           className="text-white hover:text-sky-200 font-bold text-xs capitalize"
-                        >
-                           {n.title}
-                        </Link>
+                        <div key={n.id} className="flex items-center">
+                           <Link
+                              href={`${n.route}`}
+                              className="px-2 text-center font-extrabold text-xs capitalize hover:text-theme_green text-theme_green/90 hover:underline"
+                           >
+                              {n.title}
+                           </Link>
+                           <p className="text-theme_green/50">|</p>
+                        </div>
                      ))}
-                  </nav>
-               </div>
+                  </div>
+                  <FaUserLarge className="text-theme_green text-xs" />
+               </nav>
             </MediaQuery>
          </div>
          <MediaQuery>
-            <div className="flex justify-between items-center h-18">
-               <Logo />
-               <div className="flex justify-between items-center h-full gap-6">
+            <Logo />
+            <div className="flex  items-end  justify-end h-16">
+               <div className="flex justify-end h-full">
                   <nav className="hidden lg:flex items-center h-full ">
-                     {naviagtion.map((n) => (
-                        <Link
-                           key={n.id}
-                           href={`${n.route}`}
-                           className={`px-3 py-2 text-center capitalize font-bold transition-colors justify-center  items-center h-full hover:border-emerald-700 flex hover:bg-neutral-100 hover:text-emerald-700/80 ${isActive(n.route) ? " border-b-3 border-emerald-700 text-emerald-800" : "border-b-3 border-transparent"}`}
-                        >
-                           {n.title}
-                        </Link>
+                     {naviagtion.map((n, i) => (
+                        <div key={n.id} className="flex items-center">
+                           <Link
+                              href={`${n.route}`}
+                              className={`px-2 text-center text-md capitalize transition-colors justify-center font-black items-center h-full hover:text-theme_green`}
+                           >
+                              {n.title}
+                           </Link>
+                           <p className="text-theme_green/50">|</p>
+                        </div>
                      ))}
                   </nav>
                   <button onClick={() => setShowMenu(!showMenu)} className="lg:hidden">
                      {showMenu ? "close" : "menu"}{" "}
                   </button>
-                  <Link
-                     href={"/registration"}
-                     className="hidden lg:flex bg-emerald-700 text-white capitalize font-bold p-2 px-3 rounded-md hover:bg-emerald-600 active:scale-x-95"
-                  >
-                     registration
-                  </Link>
                </div>
             </div>
          </MediaQuery>
          <SideBar visible={showMenu} />
       </header>
    );
-}
-
-{
-   /* <button type="button" onClick={handleSignOut} className="cursor-pointer">
-                  signOut
-               </button> */
 }
