@@ -1,5 +1,4 @@
 "use client";
-import { signOut } from "next-auth/react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { naviagtion, topNaviagtion } from "./navigation";
@@ -22,7 +21,7 @@ export default function Navigation() {
    return (
       <header className="bg-white backdrop-blur-sm w-full z-50">
          <div className="bg-red-600 h-1"></div>
-         <div className=" lg:flex bg-theme_green/15 py-1.5">
+         <div className=" bg-theme_green/15 py-1.5">
             <MediaQuery>
                <nav className="flex justify-end items-center">
                   <div className="flex items-center">

@@ -1,7 +1,7 @@
 import React from "react";
 import MediaQuery from "../ui/MediaQuery";
 import Image from "next/image";
-import logo from "../../../public/logo.jpeg";
+import logo from "../../../public/logo-white.png";
 import Link from "next/link";
 
 export const Registration = () => {
