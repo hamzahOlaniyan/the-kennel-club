@@ -1,17 +1,17 @@
 import type { Metadata } from "next";
-import { Alfa_Slab_One, Geist_Mono } from "next/font/google";
+import { Alfa_Slab_One, Open_Sans } from "next/font/google";
 import "./globals.css";
 import NavBar from "../components/NavBar";
 import Footer from "../components/Footer";
 
-const lilita_One = Alfa_Slab_One({
-   variable: "--font-lilita",
+const alfaSlab = Alfa_Slab_One({
+   variable: "--font-alfa-slab",
    weight: ["400"],
    subsets: ["latin"],
 });
 
-const geistMono = Geist_Mono({
-   variable: "--font-geist-mono",
+const openSans = Open_Sans({
+   variable: "--font-open-sans",
    subsets: ["latin"],
 });
 
@@ -28,9 +28,7 @@ export default async function RootLayout({
 }>) {
    return (
       <html lang="en">
-         <body
-            className={`${lilita_One.variable} ${geistMono.variable} antialiased h-screen font-[95%] md:font-[98%] lg:font-[100%]`}
-         >
+         <body className={`${alfaSlab.variable} ${openSans.variable} antialiased h-screen`}>
             <NavBar />
             <div className="">{children}</div>
             <Footer />

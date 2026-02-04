@@ -20,7 +20,7 @@ export const Registration = () => {
                   />
                </div>
                <div className="text-white space-y-2">
-                  <h1 className="font-lilita text-4xl">Declare Your Love and Register with the KCG</h1>
+                  <h1 className="font-alfa-slab text-4xl">Declare Your Love and Register with the KCG</h1>
                   <p>
                      Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem tempora laborum ab explicabo fugiat
                      incidunt quasi at, veniam repudiandae quis. Eos optio odio nihil omnis. Autem libero cumque itaque
