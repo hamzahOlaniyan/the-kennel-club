@@ -8,8 +8,8 @@
 @theme {
    /* --color-background: var(--background); */
    /* --color-foreground: var(--foreground); */
-   --font-lilita: var(--font-lilita);
-   --font-mono: var(--font-geist-mono);
+   --font-alfa-slab: var(--font-alfa-slab);
+   --font-open-sans: var(--font-open-sans);
    --color-theme_blue: #0e1b8d;
    --color-theme_green: #006220;
 }
@@ -33,10 +33,11 @@
    box-sizing: border-box;
 }
 
-/* html,
+html,
 body {
+   font-family: var(--font-open-sans);
    padding: 0;
    margin: 0;
    height: "screen";
    background-color: "#eef0f2";
-} */
+}

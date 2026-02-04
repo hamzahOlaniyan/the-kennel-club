@@ -4,6 +4,8 @@ import MediaQuery from "../ui/MediaQuery";
 import Link from "next/link";
 import Image from "next/image";
 import logo from "../../../public/logo-white.png";
+import kcg2 from "../../../public/kcg2.svg";
+
 import { FiFacebook, FiInstagram, FiYoutube } from "react-icons/fi";
 import { FaXTwitter } from "react-icons/fa6";
 import { naviagtion } from "./footerNavigation";
@@ -17,13 +19,13 @@ export default function footer() {
          <div className="bg-emerald-900 text-white bottom-0 py-12 w-full">
             <MediaQuery>
                <div className="space-y-4">
-                  <div className=" lg:flex justify-between lg:gap-10">
-                     <div className="flex-col gap-y-6 space-y-2 justify-center items-center">
-                        <Link href="/" className="lg:flex items-start justify-center gap-2 top-0 p-2">
-                           <Image src={logo} alt={"logo"} width={75} height={75} priority className="rounded-full" />
-                           <p className="w-full text-white font-extrabold text-xl">The Kennel Club Gambia</p>
+                  <div className="space-y-6 lg:gap-10">
+                     <div className="flex space-y-5 flex-col lg:flex-row justify-center items-center">
+                        <Link href="/" className="flex gap-2 lg:gap-2 flex-col lg:flex-row justify-center items-center">
+                           <Image src={logo} alt={"logo"} width={85} height={85} priority />
+                           <Image src={kcg2} alt={"kcg"} width={200} height={90} priority />
                         </Link>
-                        <div className="flex gap-6 w-full">
+                        <div className="flex gap-6 w-full items-center justify-center">
                            <a href="">
                               <FiFacebook size={26} />
                            </a>
