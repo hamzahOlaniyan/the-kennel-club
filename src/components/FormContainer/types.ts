@@ -7,4 +7,5 @@ export type FormContainerType = {
    linkLabel: string;
    error?: string;
    message?: string;
+   copyright?: boolean;
 };

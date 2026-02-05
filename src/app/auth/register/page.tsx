@@ -54,7 +54,7 @@ export default function Register() {
          error={error}
          message={message}
       >
-         <form onSubmit={handleRegister} className="space-y-3">
+         <form onSubmit={handleRegister} className="space-y-3 w-full">
             <div>
                <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1">
                   Full Name

@@ -1,17 +1,28 @@
 import Link from "next/link";
 import React from "react";
 import { FormContainerType } from "./types";
+import kcg from "../../../public/kcg2.svg";
+import Image from "next/image";
 
-const FormContainer = ({ children, subHeader, link, linkText, linkLabel, error, message }: FormContainerType) => {
+const FormContainer = ({
+   children,
+   subHeader,
+   link,
+   linkText,
+   linkLabel,
+   error,
+   message,
+   copyright = true,
+}: FormContainerType) => {
    return (
-      <div className="h-screen flex justify-center items-center bg-sky-700 flex-col">
-         <div className="w-1/4 bg-white py-8 p-6 rounded-md space-y-8">
+      <div className="h-screen flex justify-center items-center flex-col">
+         <div className="lg:w-1/4 bg-white py-8 p-6 rounded-md space-y-8">
             <div className="space-y-5">
-               <div className="w-full space-y-3 h-full">
-                  <div className="text-center">
-                     <h1 className="text-xl font-bold text-gray-900 mb-2">The Kennel Club Gambia</h1>
-                     <p className="text-gray-600 text-sm">{subHeader}</p>
+               <div className="w-full space-y-3 h-full justify-center flex flex-col items-center">
+                  <div className="w-50 h-8 lg:w-62 relative justify-center flex items-center ">
+                     <Image src={kcg} alt={"logo"} fill priority className="w-full h-full" />
                   </div>
+                  <p className="text-gray-600 text-sm">{subHeader}</p>
                   {error && (
                      <div className="bg-red-50 border border-red-200 rounded-lg p-2">
                         <div className="flex">
@@ -47,7 +58,9 @@ const FormContainer = ({ children, subHeader, link, linkText, linkLabel, error, 
                   </Link>
                </div>
             </div>
-            <p className="text-xs text-center">Copyright © The Kennel Club Gambia. All Rights Reserved.</p>
+            {copyright && (
+               <p className="text-xs text-center">Copyright © The Kennel Club Gambia. All Rights Reserved.</p>
+            )}
          </div>
          <Link
             href={"/"}

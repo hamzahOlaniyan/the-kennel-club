@@ -20,48 +20,64 @@ export default function Navigation() {
       return pathname === path;
    };
 
+   const isLoggedIn = false;
+
    return (
       <header className="bg-white backdrop-blur-sm w-full z-50">
-         <div className="bg-red-600 h-1"></div>
-         <div className=" bg-theme_green/15 py-1.5 h-8">
+         {/* <div className="bg-red-600 h-1"></div> */}
+         <div className="bg-emerald-700 py-1.5 h-8 pt-2 flex justify-center items-center">
             <MediaQuery>
-               <nav className="hidden lg:flex justify-end items-center">
-                  <div className="flex items-center">
+               <nav className="flex justify-end items-center gap-2">
+                  <div className="hidden lg:flex justify-center items-center gap-6">
                      {topNaviagtion.map((n) => (
                         <div key={n.id} className="flex items-center">
                            <Link
                               href={`${n.route}`}
-                              className="px-2 text-center font-extrabold text-xs capitalize hover:text-theme_green text-theme_green/90 hover:underline"
+                              className="px-2 text-center font-bold text-xs capitalize text-white hover:text-neutral-200/80"
                            >
                               {n.title}
                            </Link>
-                           <p className="text-theme_green/50">|</p>
                         </div>
                      ))}
                   </div>
-                  <FaUserLarge className="text-theme_green text-xs" />
+                  <p className="hidden lg:flex text-neutral-200/80 relative -top-0.5">|</p>
+                  <div className="flex gap-2 items-center">
+                     {isLoggedIn ? (
+                        <p className="text-sm capitalize font-medium text-white cursor-pointer">Hamzah Mayamba</p>
+                     ) : (
+                        <>
+                           <FaUserLarge className="text-white text-xs" />
+                           <Link
+                              href={"/auth/sign-in"}
+                              type="button"
+                              className="text-xs capitalize font-bold text-white cursor-pointer"
+                           >
+                              sign in
+                           </Link>
+                        </>
+                     )}
+                  </div>
                </nav>
             </MediaQuery>
          </div>
          <MediaQuery>
             <div className="flex items-end justify-between h-20">
                <Logo />
-               <div className="flex justify-end h-full">
-                  <nav className="hidden lg:flex items-center h-full ">
+               <div className="flex justify-end h-full w-full">
+                  <nav className="hidden lg:flex items-center gap-8 h-full w-full justify-end">
                      {naviagtion.map((n, i) => (
-                        <div key={n.id} className="flex items-center">
+                        <ul key={n.id} className="flex items-center ">
                            <Link
                               href={`${n.route}`}
-                              className={`px-2 text-center text-md capitalize transition-colors justify-center font-bold items-center h-full hover:text-theme_green`}
+                              className={`text-center text-md capitalize transition-colors justify-center font-semibold items-center h-full`}
                            >
                               {n.title}
                            </Link>
-                           <p className="text-theme_green/50">|</p>
-                        </div>
+                        </ul>
                      ))}
                   </nav>
                   <button onClick={() => setShowMenu(!showMenu)} className="lg:hidden">
-                     {showMenu ? <IoCloseSharp size={28} /> : <RiMenuFill size={28} />}
+                     {showMenu ? <IoCloseSharp size={32} /> : <RiMenuFill size={32} />}
                   </button>
                </div>
             </div>

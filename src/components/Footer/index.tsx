@@ -16,7 +16,7 @@ export default function footer() {
    if (pathname.includes("auth")) return null;
    return (
       <footer>
-         <div className="bg-emerald-900 text-white bottom-0 py-12 w-full">
+         <div className="bg-emerald-950 text-white bottom-0 py-12 w-full">
             <MediaQuery>
                <div className="space-y-4">
                   <div className="space-y-6 lg:gap-10">

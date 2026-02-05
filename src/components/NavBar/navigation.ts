@@ -17,13 +17,13 @@ export const topNaviagtion: NavgationType = [
    },
    {
       id: 2,
-      title: "sign in",
+      title: "lorem",
       route: "/auth/sign-in",
    },
    {
       id: 3,
-      title: "sign up",
-      route: "/auth/register",
+      title: "lorem",
+      route: "/auth/sign-in",
    },
 ];
 export const naviagtion: NavgationType = [
