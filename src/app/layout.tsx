@@ -4,6 +4,7 @@ import "./globals.css";
 import NavBar from "../components/NavBar";
 import Footer from "../components/Footer";
 import { AuthStoreProvider } from "../providers/AuthProvider";
+import AuthSync from "../components/AuthSync";
 
 const alfaSlab = Alfa_Slab_One({
    variable: "--font-alfa-slab",
@@ -31,6 +32,7 @@ export default async function RootLayout({
       <html lang="en">
          <body className={`${alfaSlab.variable} ${openSans.variable} antialiased h-screen`}>
             <AuthStoreProvider>
+               <AuthSync />
                <NavBar />
                <div className="">{children}</div>
                <Footer />
