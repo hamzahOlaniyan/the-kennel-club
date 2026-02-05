@@ -7,8 +7,8 @@ export type AuthState = {
 };
 
 export type AuthActions = {
+   setAuth: (payload: { user: User | null; session: Session | null }) => void;
    signOut: () => void;
-   logIn: () => void;
 };
 
 export type AuthStore = AuthState & AuthActions;
@@ -18,10 +18,10 @@ export const defaultInitState: AuthState = {
    session: null,
 };
 
-export const createAuthStore = (initState: AuthState = defaultInitState) => {
+export const useAuthStore = (initState: AuthState = defaultInitState) => {
    return create<AuthStore>((set) => ({
       ...initState,
-      signOut: () => set({ session: null }),
-      logIn: () => set({ user: null }),
+      setAuth: ({ user, session }) => set({ session, user }),
+      signOut: () => set({ user: null }),
    }));
 };

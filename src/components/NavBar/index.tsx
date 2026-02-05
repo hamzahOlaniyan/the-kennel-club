@@ -7,11 +7,16 @@ import MediaQuery from "../ui/MediaQuery";
 import SideBar from "../SideMenu";
 import { useState } from "react";
 import { FaUserLarge } from "react-icons/fa6";
-import { RiMenuFill } from "react-icons/ri";
+import { RiLogoutBoxRLine, RiMenuFill, RiProfileLine } from "react-icons/ri";
 import { IoCloseSharp } from "react-icons/io5";
+import { useAuth } from "@/src/providers/AuthProvider";
 
 export default function Navigation() {
+   const user = useAuth((s) => s.user);
+
    const [showMenu, setShowMenu] = useState(false);
+   const [showDropdown, setShowDropdown] = useState(false);
+
    const pathname = usePathname();
 
    if (pathname.includes("auth")) return null;
@@ -20,7 +25,7 @@ export default function Navigation() {
       return pathname === path;
    };
 
-   const isLoggedIn = false;
+   const isLoggedIn = !!user;
 
    return (
       <header className="bg-white backdrop-blur-sm w-full z-50">
@@ -43,7 +48,39 @@ export default function Navigation() {
                   <p className="hidden lg:flex text-neutral-200/80 relative -top-0.5">|</p>
                   <div className="flex gap-2 items-center">
                      {isLoggedIn ? (
-                        <p className="text-sm capitalize font-medium text-white cursor-pointer">Hamzah Mayamba</p>
+                        <button
+                           type="button"
+                           onMouseEnter={() => setShowDropdown(true)}
+                           className="flex items-center gap-1 relative"
+                        >
+                           <FaUserLarge className="text-white text-xs" />
+                           <p className="text-sm capitalize font-medium text-white cursor-pointer">
+                              {user?.user_metadata?.email}
+                           </p>
+                           {showDropdown && (
+                              <div
+                                 onMouseLeave={() => setShowDropdown(false)}
+                                 className="bg-white absolute top-6 w-full overflow-hidden rounded-sm shadow-sm"
+                              >
+                                 <ul className="flex flex-col">
+                                    <button
+                                       type="button"
+                                       className="text-sm flex gap-2 items-center text-left capitalize font-semibold cursor-pointer hover:bg-emerald-500/10 p-3 border-b border-neutral-200"
+                                    >
+                                       <RiProfileLine />
+                                       <p> my profile</p>
+                                    </button>
+                                    <button
+                                       type="button"
+                                       className="text-sm text-left  flex gap-2 items-centercapitalize font-semibold cursor-pointer hover:bg-emerald-500/10 p-3 "
+                                    >
+                                       <RiLogoutBoxRLine />
+                                       <p> log out</p>
+                                    </button>
+                                 </ul>
+                              </div>
+                           )}
+                        </button>
                      ) : (
                         <>
                            <FaUserLarge className="text-white text-xs" />
