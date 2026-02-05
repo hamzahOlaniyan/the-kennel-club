@@ -3,6 +3,7 @@ import { Alfa_Slab_One, Open_Sans } from "next/font/google";
 import "./globals.css";
 import NavBar from "../components/NavBar";
 import Footer from "../components/Footer";
+import { AuthStoreProvider } from "../providers/AuthProvider";
 
 const alfaSlab = Alfa_Slab_One({
    variable: "--font-alfa-slab",
@@ -29,9 +30,11 @@ export default async function RootLayout({
    return (
       <html lang="en">
          <body className={`${alfaSlab.variable} ${openSans.variable} antialiased h-screen`}>
-            <NavBar />
-            <div className="">{children}</div>
-            <Footer />
+            <AuthStoreProvider>
+               <NavBar />
+               <div className="">{children}</div>
+               <Footer />
+            </AuthStoreProvider>
          </body>
       </html>
    );
