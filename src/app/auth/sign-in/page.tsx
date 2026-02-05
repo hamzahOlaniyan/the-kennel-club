@@ -4,6 +4,7 @@ import FormContainer from "@/src/components/FormContainer";
 import Button from "@/src/components/ui/Button";
 import { FormEvent, useState } from "react";
 import { redirect } from "next/navigation";
+import Link from "next/link";
 
 export default function SignIn() {
    const [loading, setLoading] = useState(false);
@@ -20,7 +21,7 @@ export default function SignIn() {
          link="register"
          linkLabel="register"
       >
-         <form className="space-y-3">
+         <form className="space-y-3 w-full">
             <div>
                <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">
                   Email address
@@ -54,6 +55,9 @@ export default function SignIn() {
                />
             </div>
             <Button text="Sign in" />
+            <Link href="/auth/sign-in/otp" replace>
+               otp
+            </Link>
          </form>
       </FormContainer>
    );

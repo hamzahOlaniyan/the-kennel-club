@@ -1,11 +1,19 @@
+"use client";
 import Link from "next/link";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { FaUserLarge } from "react-icons/fa6";
 import { naviagtion, topNaviagtion } from "../NavBar/navigation";
-import { log } from "console";
 
 export default function SideBar({ visible }: { visible: boolean }) {
-   const { innerWidth: width } = window;
+   const [width, setWidth] = useState<number>(0);
+
+   useEffect(() => {
+      const onResize = () => setWidth(window.innerWidth);
+
+      onResize(); // set initial width
+      window.addEventListener("resize", onResize);
+      return () => window.removeEventListener("resize", onResize);
+   }, []);
 
    return (
       <div
@@ -14,15 +22,11 @@ export default function SideBar({ visible }: { visible: boolean }) {
          <nav className="">
             {topNaviagtion.map((n) => (
                <div key={n.id} className="flex items-center">
-                  <Link
-                     href={`${n.route}`}
-                     className="px-8 py-3 w-full font-extrabold  capitalize hover:text-theme_green text-theme_green/90 hover:underline"
-                  >
+                  <Link href={`${n.route}`} className="px-8 py-3 w-full font-extrabold  capitalize text-emerald-700">
                      {n.title}
                   </Link>
                </div>
             ))}
-            {/* <FaUserLarge className="text-theme_green text-xs" /> */}
          </nav>
          <nav className="">
             {naviagtion.map((n, i) => (
