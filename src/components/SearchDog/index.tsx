@@ -20,7 +20,9 @@ export default function SearchDog() {
                <select onChange={handleSelect} value={selected} id="breed" className="bg-white  w-full lg:w-1/4 h-10">
                   <option disabled>select breed</option>
                   {breeds.map((opt) => (
-                     <option value={opt}>{opt}</option>
+                     <option key={opt} value={opt}>
+                        {opt}
+                     </option>
                   ))}
                </select>
             </div>
