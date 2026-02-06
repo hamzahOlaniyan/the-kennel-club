@@ -1,10 +1,14 @@
+"use client";
 import Link from "next/link";
 import React from "react";
 import { FormContainerType } from "./types";
 import kcg from "../../../public/kcg2.svg";
 import Image from "next/image";
+import { IoCloseSharp } from "react-icons/io5";
+import { useRouter } from "next/navigation";
 
 const FormContainer = ({
+   header,
    children,
    subHeader,
    link,
@@ -14,15 +18,21 @@ const FormContainer = ({
    message,
    copyright = true,
 }: FormContainerType) => {
+   const router = useRouter();
    return (
-      <div className="h-screen flex justify-center items-center flex-col">
-         <div className="lg:w-1/4 bg-white py-8 p-6 rounded-md space-y-8">
+      <div className="h-screen flex justify-center items-center flex-col bg-neutral-100">
+         <IoCloseSharp
+            onClick={() => router.replace("/")}
+            className="absolute right-5 top-5 text-3xl cursor-pointer active:scale-95 hover:text-neutral-600"
+         />
+         <div className="lg:mx-w-2/4 bg-white py-8 p-6 rounded-md space-y-8">
             <div className="space-y-5">
                <div className="w-full space-y-3 h-full justify-center flex flex-col items-center">
                   <div className="w-50 h-8 lg:w-62 relative justify-center flex items-center ">
                      <Image src={kcg} alt={"logo"} fill priority className="w-full h-full" />
                   </div>
-                  <p className="text-gray-600 text-sm">{subHeader}</p>
+                  <p className="text-xl font-bold">{header}</p>
+                  <p className="text-gray-600 font-medium text-sm">{subHeader}</p>
                   {error && (
                      <div className="bg-red-50 border border-red-200 rounded-lg p-2">
                         <div className="flex">
@@ -50,10 +60,7 @@ const FormContainer = ({
                </div>
                <div className="flex items-center gap-1 justify-center">
                   <p>{linkText}</p>
-                  <Link
-                     href={`/auth/${link}`}
-                     className="text-sm font-bold cursor-pointer transition-colors text-neutral-800"
-                  >
+                  <Link href={`/auth/${link}`} className="font-bold hover:underline cursor-pointer transition-colors">
                      {linkLabel}
                   </Link>
                </div>

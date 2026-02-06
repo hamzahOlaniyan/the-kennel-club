@@ -11,12 +11,11 @@ export default function AuthSync() {
 
    const signOutStore = useAuth((s) => s.signOut);
 
-   //    console.log("HOME SESSION", session);
+   console.log("HOME SESSION", session);
    //    console.log("HOME USER", user);
 
    useEffect(() => {
       const supabase = createClient();
-
       // initial load
       supabase.auth.getSession().then(({ data }) => {
          setAuth({
