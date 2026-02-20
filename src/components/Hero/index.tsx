@@ -3,9 +3,15 @@ import heroImage from "../../../public/hero.jpg";
 
 export default function Hero() {
    return (
-      <div className="relative h-[86vh] flex items-center overflow-hidden">
+      <div className="relative h-[86vh] flex items-center overflow-hidden z-10">
          <div className="absolute inset-0 z-0">
-            <Image src={heroImage} alt="Champion Dog" fill className="w-full h-full object-cover brightness-50" />
+            <Image
+               src={heroImage}
+               alt="Champion Dog"
+               fill
+               priority
+               className="w-full h-full object-cover brightness-50"
+            />
             <div className="absolute inset-0 bg-linear-to-r from-neutral-950/40 to-transparent"></div>
          </div>
 
