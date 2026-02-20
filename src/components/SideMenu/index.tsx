@@ -17,7 +17,7 @@ export default function SideBar({ visible }: { visible: boolean }) {
 
    return (
       <div
-         className={`h-screen w-full bg-white fixed left-0 top-27 pt-4 ${visible && width < 1024 ? "visible" : "hidden"}`}
+         className={`h-screen w-full bg-white fixed left-0 z-50 top-27 pt-4 ${visible && width < 1024 ? "visible" : "hidden"}`}
       >
          <nav className="">
             {topNaviagtion.map((n) => (

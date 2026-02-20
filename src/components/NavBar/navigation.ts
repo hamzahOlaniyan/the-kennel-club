@@ -15,27 +15,13 @@ export const topNaviagtion: NavgationType = [
       title: "search dog",
       route: "/search-dog",
    },
-   {
-      id: 2,
-      title: "lorem",
-      route: "/",
-   },
-   {
-      id: 3,
-      title: "lorem",
-      route: "/",
-   },
 ];
+
 export const naviagtion: NavgationType = [
    {
       id: 1,
       title: "home",
       route: "/",
-   },
-   {
-      id: 3,
-      title: "your dog",
-      route: "/your-dog",
    },
    {
       id: 4,
@@ -44,12 +30,12 @@ export const naviagtion: NavgationType = [
    },
    {
       id: 5,
-      title: "Dog Breeding",
+      title: "Dog Info",
       route: "/dog-breeding",
    },
    {
       id: 6,
-      title: "Health & Dog Care",
+      title: "Resources",
       route: "/healthcare",
    },
    {

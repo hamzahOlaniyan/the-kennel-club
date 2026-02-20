@@ -17,7 +17,12 @@ export default function SignIn() {
          link="register"
          linkLabel="register"
       >
-         <form action={(fd) => starTransition(() => login(fd))} className="space-y-3 w-full">
+         <form
+            action={async (formData: FormData) => {
+               await login(formData);
+            }}
+            className="space-y-3 w-full"
+         >
             <Input label="Email" />
             <Input label="Password" />
             <button

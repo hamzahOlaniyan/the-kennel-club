@@ -3,8 +3,6 @@
 import { redirect } from "next/navigation";
 import { createClient } from "../lib/supabase/server";
 import { cookies } from "next/headers";
-import { useAuthStore } from "../store/useAuthStore";
-import { useAuth } from "../providers/AuthProvider";
 import { revalidatePath } from "next/cache";
 
 type SignupState = {
@@ -22,11 +20,14 @@ export async function login(formData: FormData) {
       password: formData.get("password") as string,
    };
 
+   console.log({ data });
+
    const { error, data: result } = await supabase.auth.signInWithPassword(data);
    console.log({ result });
 
    if (error) {
       console.log({ error });
+      return { message: error };
    }
 
    revalidatePath("/", "layout");
