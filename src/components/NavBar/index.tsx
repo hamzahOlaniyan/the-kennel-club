@@ -104,12 +104,12 @@ export default function Navigation() {
                         </ul>
                      ))}
                   </nav>
-                  <button onClick={() => setShowMenu(!showMenu)} className="z=10 lg:hidden">
+                  <button onClick={() => setShowMenu(!showMenu)} className="z-50 lg:hidden">
                      {showMenu ? <IoCloseSharp size={32} /> : <RiMenuFill size={32} />}
                   </button>
                </div>
             </div>
-            <SideBar visible={showMenu} />
+            <SideBar visible={showMenu} setShowMenu={setShowMenu} />
          </MediaQuery>
       </header>
    );
