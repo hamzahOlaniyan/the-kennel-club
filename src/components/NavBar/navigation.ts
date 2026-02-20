@@ -8,24 +8,15 @@ export const topNaviagtion: NavgationType = [
    {
       id: 4,
       title: "registration",
-      route: "/registeration",
+      route: "/registration",
    },
    {
       id: 1,
       title: "search dog",
-      route: "/auth/register",
-   },
-   {
-      id: 2,
-      title: "lorem",
-      route: "/auth/sign-in",
-   },
-   {
-      id: 3,
-      title: "lorem",
-      route: "/auth/sign-in",
+      route: "/search-dog",
    },
 ];
+
 export const naviagtion: NavgationType = [
    {
       id: 1,
@@ -33,24 +24,19 @@ export const naviagtion: NavgationType = [
       route: "/",
    },
    {
-      id: 3,
-      title: "your dog",
-      route: "/auth/register",
-   },
-   {
       id: 4,
       title: "Events & Activities",
-      route: "/auth/register",
+      route: "/events&activities",
    },
    {
       id: 5,
-      title: "Dog Breeding",
-      route: "/auth/register",
+      title: "Dog Info",
+      route: "/dog-breeding",
    },
    {
       id: 6,
-      title: "Health & Dog Care",
-      route: "/auth/register",
+      title: "Resources",
+      route: "/healthcare",
    },
    {
       id: 2,

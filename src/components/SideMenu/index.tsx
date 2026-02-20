@@ -4,7 +4,7 @@ import React, { useEffect, useState } from "react";
 import { FaUserLarge } from "react-icons/fa6";
 import { naviagtion, topNaviagtion } from "../NavBar/navigation";
 
-export default function SideBar({ visible }: { visible: boolean }) {
+export default function SideBar({ visible, setShowMenu }: { visible: boolean; setShowMenu: any }) {
    const [width, setWidth] = useState<number>(0);
 
    useEffect(() => {
@@ -16,9 +16,7 @@ export default function SideBar({ visible }: { visible: boolean }) {
    }, []);
 
    return (
-      <div
-         className={`h-screen w-full bg-white fixed left-0 top-27 pt-4 ${visible && width < 1024 ? "visible" : "hidden"}`}
-      >
+      <div className={`h-screen w-full bg-white  left-0 z-50  pt-4 ${visible && width < 1024 ? "visible" : "hidden"}`}>
          <nav className="">
             {topNaviagtion.map((n) => (
                <div key={n.id} className="flex items-center">
@@ -33,6 +31,7 @@ export default function SideBar({ visible }: { visible: boolean }) {
                <div key={n.id} className="flex items-center">
                   <Link
                      href={`${n.route}`}
+                     onClick={() => setShowMenu(false)}
                      className={`px-8 text-lg py-4 w-full capitalize transition-colors justify-center font-bold items-center h-full hover:text-theme_green border-t border-theme_green/10`}
                   >
                      {n.title}

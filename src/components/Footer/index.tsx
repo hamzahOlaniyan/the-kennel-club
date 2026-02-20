@@ -19,28 +19,41 @@ export default function footer() {
          <div className="bg-emerald-950 text-white bottom-0 py-12 w-full">
             <MediaQuery>
                <div className="space-y-4">
-                  <div className="space-y-6 lg:gap-10">
-                     <div className="flex space-y-5 flex-col lg:flex-row justify-center items-center">
-                        <Link href="/" className="flex gap-2 lg:gap-2 flex-col lg:flex-row justify-center items-center">
+                  <div className="grid lg:grid-cols-[300px_200px_200px_200px_200px] gap-10 gap-y-6 justify-between">
+                     <div className="space-y-3">
+                        <Link href="/" className="flex gap-2">
                            <Image src={logo} alt={"logo"} width={85} height={85} priority />
                            <Image src={kcg2} alt={"kcg"} width={200} height={90} priority />
                         </Link>
-                        <div className="flex gap-6 w-full items-center justify-center">
-                           <a href="">
-                              <FiFacebook size={26} />
-                           </a>
-                           <a href="">
-                              <FiInstagram size={26} />
-                           </a>
-                           <a href="">
-                              <FaXTwitter size={26} />
-                           </a>
-                           <a href="">
-                              <FiYoutube size={26} />
-                           </a>
+                        <p className="text-sm">
+                           Dedicated to the preservation and promotion of purebred dogs since 1924. Excellence in
+                           breeding, training, and sportsmanship defines our heritage.
+                        </p>
+                        <div className=" flex gap-4">
+                           <span>
+                              <a href="">
+                                 <FiFacebook size={26} />
+                              </a>
+                           </span>
+                           <span>
+                              {" "}
+                              <a href="">
+                                 <FiInstagram size={26} />
+                              </a>
+                           </span>
+                           <span>
+                              <a href="">
+                                 <FaXTwitter size={26} />
+                              </a>
+                           </span>
+                           <span>
+                              <a href="">
+                                 <FiYoutube size={26} />
+                              </a>
+                           </span>
                         </div>
                      </div>
-                     <div className="grid grid-cols-2 gap-y-6 lg:flex justify-between w-full">
+                     <div className="flex justify-between">
                         <div className="space-y-1">
                            <h1 className="font-bold text-sm">MENU</h1>
                            {naviagtion.map((n, i) => (
@@ -61,6 +74,8 @@ export default function footer() {
                               </div>
                            ))}
                         </div>
+                     </div>
+                     <div className="flex justify-between">
                         <div className="space-y-1">
                            <h1 className="font-bold text-sm">EVENTS</h1>
                            {naviagtion.map((n, i) => (
@@ -100,17 +115,17 @@ export default function footer() {
                      </nav>
                      <div className="space-y-1 text-center">
                         <p className="font-bold text-sm">
-                           Copyright © The Royal Kennel Club Limited 2026. The unauthorised reproduction of text and
-                           images is strictly prohibited.
+                           Copyright © The Kennel Club Gambia Club Limited 2026. The unauthorised reproduction of text
+                           and images is strictly prohibited.
                         </p>
-                        <p className="text-xs text-center">
-                           The Royal Kennel Club Limited is an Appointed Representative of Agria Pet Insurance Ltd, who
-                           administer the insurance. Agria Pet Insurance is authorised and regulated by the Financial
-                           Conduct Authority, Financial Services Register Number 496160. Agria Pet Insurance Ltd is
-                           registered and incorporated in England and Wales with registered number 04258783. Registered
-                           office: First Floor, Blue Leanie, Walton Street, Aylesbury, Buckinghamshire, HP21 7QW. Agria
-                           insurance policies are underwritten by Agria Försäkring who is authorised and regulated by
-                           the Prudential Regulatory Authority and Financial Conduct Authority.
+                        <p className="text-sm text-center">
+                           The Kennel Club Gambia Club Limited is an Appointed Representative of Agria Pet Insurance
+                           Ltd, who administer the insurance. Agria Pet Insurance is authorised and regulated by the
+                           Financial Conduct Authority, Financial Services Register Number 496160. Agria Pet Insurance
+                           Ltd is registered and incorporated in England and Wales with registered number 04258783.
+                           Registered office: First Floor, Blue Leanie, Walton Street, Aylesbury, Buckinghamshire, HP21
+                           7QW. Agria insurance policies are underwritten by Agria Försäkring who is authorised and
+                           regulated by the Prudential Regulatory Authority and Financial Conduct Authority.
                         </p>
                      </div>
                   </div>
