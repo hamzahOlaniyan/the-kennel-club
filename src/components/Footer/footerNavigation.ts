@@ -4,7 +4,7 @@ type NavgationType = {
    route: string;
 }[];
 
-export const naviagtion: NavgationType = [
+export const navigationSmall: NavgationType = [
    {
       id: 1,
       title: "Privacy",

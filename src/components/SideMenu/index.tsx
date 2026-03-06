@@ -2,7 +2,7 @@
 import Link from "next/link";
 import React, { useEffect, useState } from "react";
 import { FaUserLarge } from "react-icons/fa6";
-import { naviagtion, topNaviagtion } from "../NavBar/navigation";
+import { navigation, topNaviagtion } from "../NavBar/navigation";
 import { useAuth } from "@/src/providers/AuthProvider";
 import { LogoutButton } from "../LogoutButton";
 import { RiLogoutBoxRLine, RiProfileLine } from "react-icons/ri";
@@ -47,7 +47,7 @@ export default function SideBar({ visible, setShowMenu }: { visible: boolean; se
                   </Link>
                </nav>
                <nav className="">
-                  {naviagtion.map((n, i) => (
+                  {navigation.map((n, i) => (
                      <div key={n.id} className="flex items-center">
                         <Link
                            href={`${n.route}`}

@@ -10,36 +10,51 @@ export const topNaviagtion: NavgationType = [
       title: "registration",
       route: "/registration",
    },
-   {
-      id: 1,
-      title: "search dog",
-      route: "/search-dog",
-   },
+   // {
+   //    id: 1,
+   //    title: "search dog",
+   //    route: "/search-dog",
+   // },
 ];
 
-export const naviagtion: NavgationType = [
+export const navigation: NavgationType = [
    {
       id: 1,
       title: "home",
       route: "/",
    },
    {
-      id: 4,
+      id: 2,
       title: "Events & Activities",
       route: "/events&activities",
    },
    {
+      id: 3,
+      title: "Breeders",
+      route: "/breeders",
+   },
+   {
+      id: 4,
+      title: "Health & Welfare",
+      route: "/health-welfare",
+   },
+   {
       id: 5,
-      title: "Dog Info",
-      route: "/dog-breeding",
+      title: "development",
+      route: "/development",
    },
    {
       id: 6,
-      title: "Resources",
-      route: "/healthcare",
+      title: "education",
+      route: "/education",
    },
    {
-      id: 2,
+      id: 7,
+      title: "charity",
+      route: "/charity",
+   },
+   {
+      id: 8,
       title: "about us",
       route: "/about-us",
    },

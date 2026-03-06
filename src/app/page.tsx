@@ -8,8 +8,8 @@ export default function Home() {
    return (
       <div>
          <Hero />
-         <RegisterServiceSection />
          <Registration />
+         <RegisterServiceSection />
          {/* <SearchDog /> */}
       </div>
    );

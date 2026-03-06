@@ -1,7 +1,7 @@
 "use client";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { naviagtion, topNaviagtion } from "./navigation";
+import { navigation, topNaviagtion } from "./navigation";
 import Logo from "../ui/logo";
 import MediaQuery from "../ui/MediaQuery";
 import SideBar from "../SideMenu";
@@ -30,7 +30,7 @@ export default function Navigation() {
 
    return (
       <>
-         <header className="bg-white backdrop-blur-sm w-full z-50 shadow-sm relative">
+         <header className="bg-white z-50 shadow-sm top-0 fixed md:sticky w-full">
             <div className="bg-emerald-600 h-1"></div>
             <MediaQuery>
                <div className="flex justify-between py-1">
@@ -96,8 +96,8 @@ export default function Navigation() {
                         </div>
                      </nav>
 
-                     <nav className="hidden lg:flex  gap-8 w-full justify-end">
-                        {naviagtion.map((n, i) => (
+                     <nav className="hidden lg:flex gap-4 w-full justify-end">
+                        {navigation.map((n, i) => (
                            <ul key={n.id} className="flex items-center">
                               <Link
                                  href={`${n.route}`}
