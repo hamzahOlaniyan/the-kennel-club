@@ -8,44 +8,29 @@ export const Registration = () => {
    return (
       <div className=" bg-gray-200">
          <MediaQuery>
-            <div className="flex flex-col lg:flex-row py-12 gap-13">
-               <div className="w-150 lg:w-250 relative">
-                  <Image
-                     src={logo}
-                     alt={"logo"}
-                     fill={true}
-                     objectFit="'contain"
-                     priority
-                     className="object-contain w-full h-full object-top rounded-full"
-                  />
+            <div className="grid grid-cols-1 md:grid-cols-[1fr_2fr] gap-4 py-12 lg:py-24 p-4">
+               <div className="h-48 relative">
+                  <Image src={logo} alt={"logo"} fill={true} priority className="object-contain w-full h-full" />
                </div>
-               <div className=" space-y-6">
-                  <div className="space-y-3">
-                     <h1 className="text-4xl font-serif">Declare Your Love and Register with the KCG</h1>
+               <div className="space-y-6 ">
+                  <div className="space-y-3 text-center md:text-left">
+                     <h1 className="text-4xl font-serif">The Kennel Club Gambia (KCG)</h1>
                      <p>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem tempora laborum ab explicabo fugiat
-                        incidunt quasi at, veniam repudiandae quis. Eos optio odio nihil omnis. Autem libero cumque
-                        itaque eius.
-                     </p>
-                     <p>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem tempora laborum ab explicabo fugiat
-                        incidunt quasi at, veniam repudiandae quis. Eos optio odio nihil omnis. Autem libero cumque
-                        itaque eius. Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem tempora laborum ab
-                        explicabo fugiat incidunt quasi at, veniam repudiandae quis. Eos optio odio nihil omnis. Autem
-                        libero cumque itaque eius.
-                     </p>
-                     <p>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem tempora laborum ab explicabo fugiat
-                        incidunt quasi at, veniam repudiandae quis. Eos optio odio nihil omnis. Autem libero cumque
-                        itaque eius.
+                        The Kennel Club Gambia is the official body dedicated to the registration, development, and
+                        advancement of purebred dogs and responsible dog ownership in The Gambia. We promote: Breed
+                        integrity Ethical breeding standards Canine welfare Education & responsible ownership National
+                        and regional dog events Our mission is to establish internationally recognised standards for
+                        pedigree dogs within The Gambia and West Africa. Excellence. Integrity. Canine Development.
                      </p>
                   </div>
-                  <Link
-                     href={"/registration"}
-                     className=" bg-emerald-800 text-white capitalize font-bold p-3 px-6 rounded-md hover:bg-theme_blue/90 active:scale-x-95"
-                  >
-                     register
-                  </Link>
+                  <div className="flex justify-center items-center md:justify-start">
+                     <Link
+                        href={"/registration"}
+                        className=" bg-emerald-800 text-center md:w-fit text-white w-full capitalize font-bold p-4 px-6 rounded-md active:scale-x-95"
+                     >
+                        register
+                     </Link>
+                  </div>
                </div>
             </div>
          </MediaQuery>

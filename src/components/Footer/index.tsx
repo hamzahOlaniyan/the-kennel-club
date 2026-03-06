@@ -8,7 +8,8 @@ import kcg2 from "../../../public/kcg2.svg";
 
 import { FiFacebook, FiInstagram, FiYoutube } from "react-icons/fi";
 import { FaXTwitter } from "react-icons/fa6";
-import { naviagtion } from "./footerNavigation";
+import { navigationSmall } from "./footerNavigation";
+import { navigation } from "../NavBar/navigation";
 
 export default function footer() {
    const pathname = usePathname();
@@ -19,7 +20,7 @@ export default function footer() {
          <div className="bg-emerald-950 text-white bottom-0 py-12 w-full">
             <MediaQuery>
                <div className="space-y-4">
-                  <div className="grid lg:grid-cols-[300px_200px_200px_200px_200px] gap-10 gap-y-6 justify-between">
+                  <div className="grid lg:grid-cols-2 gap-10 gap-y-6 justify-between">
                      <div className="space-y-3">
                         <Link href="/" className="flex gap-2">
                            <Image src={logo} alt={"logo"} width={85} height={85} priority />
@@ -36,7 +37,6 @@ export default function footer() {
                               </a>
                            </span>
                            <span>
-                              {" "}
                               <a href="">
                                  <FiInstagram size={26} />
                               </a>
@@ -53,43 +53,11 @@ export default function footer() {
                            </span>
                         </div>
                      </div>
-                     <div className="flex justify-between">
+                     <div className="flex justify-between w-full">
                         <div className="space-y-1">
                            <h1 className="font-bold text-sm">MENU</h1>
-                           {naviagtion.map((n, i) => (
+                           {navigation.map((n, i) => (
                               <div key={i} className="flex items-center">
-                                 <Link href={`${n.route}`} className="text-sm my-0.5">
-                                    {n.title}
-                                 </Link>
-                              </div>
-                           ))}
-                        </div>
-                        <div className="space-y-1">
-                           <h1 className="font-bold text-sm">CHARITY WORK</h1>
-                           {naviagtion.map((n, i) => (
-                              <div key={i} className="flex items-center">
-                                 <Link href={`${n.route}`} className="text-sm my-0.5">
-                                    {n.title}
-                                 </Link>
-                              </div>
-                           ))}
-                        </div>
-                     </div>
-                     <div className="flex justify-between">
-                        <div className="space-y-1">
-                           <h1 className="font-bold text-sm">EVENTS</h1>
-                           {naviagtion.map((n, i) => (
-                              <div key={i} className="flex items-center">
-                                 <Link href={`${n.route}`} className="text-sm my-0.5">
-                                    {n.title}
-                                 </Link>
-                              </div>
-                           ))}
-                        </div>
-                        <div className="space-y-1">
-                           <h1 className="font-bold text-sm">RESOURCES</h1>
-                           {naviagtion.map((n, i) => (
-                              <div key={i} className="flex">
                                  <Link href={`${n.route}`} className="text-sm my-0.5">
                                     {n.title}
                                  </Link>
@@ -101,7 +69,7 @@ export default function footer() {
                   <div className="w-full h-px bg-emerald-200/10"></div>
                   <div className="space-y-12">
                      <nav className="hidden lg:flex items-center h-full justify-end ">
-                        {naviagtion.map((n, i) => (
+                        {navigationSmall.map((n, i) => (
                            <div key={i} className="flex items-center">
                               <Link
                                  href={`${n.route}`}
@@ -118,7 +86,7 @@ export default function footer() {
                            Copyright © The Kennel Club Gambia Club Limited 2026. The unauthorised reproduction of text
                            and images is strictly prohibited.
                         </p>
-                        <p className="text-sm text-center">
+                        <p className="text-xs text-center">
                            The Kennel Club Gambia Club Limited is an Appointed Representative of Agria Pet Insurance
                            Ltd, who administer the insurance. Agria Pet Insurance is authorised and regulated by the
                            Financial Conduct Authority, Financial Services Register Number 496160. Agria Pet Insurance

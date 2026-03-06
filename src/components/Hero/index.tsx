@@ -1,9 +1,10 @@
 import Image from "next/image";
 import heroImage from "../../../public/hero.jpg";
+import Link from "next/link";
 
 export default function Hero() {
    return (
-      <div className="relative h-[86vh] flex items-center overflow-hidden z-10">
+      <div className="relative h-[90vh] lg:h-[86vh] flex items-center overflow-hidden z-10 ">
          <div className="absolute inset-0 z-0">
             <Image
                src={heroImage}
@@ -43,9 +44,11 @@ export default function Hero() {
                         ></path>
                      </svg>
                   </button>
-                  <button className="border border-white/30 backdrop-blur-xs text-white px-8 py-4 rounded-sm font-bold text-lg hover:bg-white/10 transition-all flex items-center justify-center cursor-pointer">
-                     LEARN MORE
-                  </button>
+                  <Link href={"/about-us"}>
+                     <button className="border border-white/30 w-full backdrop-blur-xs text-white px-8 py-4 rounded-sm font-bold text-lg hover:bg-white/10 transition-all flex items-center justify-center cursor-pointer">
+                        LEARN MORE
+                     </button>
+                  </Link>
                </div>
             </div>
          </div>

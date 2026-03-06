@@ -39,10 +39,11 @@ export default function registration() {
             <div className="space-y-3 flex-col flex justify-center mt-14">
                <h1 className=" text-center text-4xl font-bold">Registrations</h1>
                <p className="text-center lg:w-2/3 self-center">
-                  The Kennel Club Gambia Club's registration system is open to all dogs, registering 250,000 pedigree
-                  and crossbreed dogs in the UK every year. We have different registers to suit different breeds and
-                  crossbreeds and their owners. See below for everything you need to know about registering your dog,
-                  including guidance on who should complete each form and how to do so.
+                  Register your dog with The Kennel Club Gambia to receive official documentation and pedigree
+                  recognition. We offer: ✔ Individual Dog Registration For purebred dogs meeting breed standards. ✔
+                  Litter Registration For registered breeders with verified parentage. ✔ Pedigree Certificates Issued
+                  with official KCG documentation. ✔ Ownership Transfer Secure and traceable ownership updates. All
+                  registrations are subject to verification to protect breed integrity.
                </p>
             </div>
             <div className="grid md:grid-cols-2 gap-6 lg:w-3/4 mx-auto">
